@@ -16,7 +16,7 @@ To get the app running on your local machine, follow these steps:
 
 1. Clone the repository:
     ```sh
-    git clone https://github.com/your-username/todo-list.git
+    git clone https://github.com/dbni-kilnapps/vue-todo-list.git
     ```
 
 2. Navigate to the project directory:
