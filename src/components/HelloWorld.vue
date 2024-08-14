@@ -1,6 +1,6 @@
 <template>
   <nav>
-    <a href="https://vitejs.dev/guide/features.html" target="_blank">GitHub</a>
+    <a href="https://github.com/dbni-kilnapps/vue-todo-listl target="_blank">GitHub</a>
   </nav>
   <h1>To-Do List</h1>
   <div>
