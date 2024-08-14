@@ -1,12 +1,13 @@
 <template>
   <nav>
-    <a href="https://github.com/dbni-kilnapps/vue-todo-listl target="_blank">GitHub</a>
+    <a href="https://github.com/dbni-kilnapps/vue-todo-list" target="_blank">GitHub</a>
   </nav>
-  <h1>To-Do List</h1>
+  <h1>My To-Do List</h1>
   <div>
+    <input type="text" placeholder="Search..." v-model="searchQuery" />
     <ul>
       <!-- check box -->
-      <li v-for="(todo, i) in todos" v-bind:key="i">
+      <li v-for="(todo, i) in filteredTodos" v-bind:key="i">
         <label :for="'todo-checkbox-' + i" class="todo-label">
           <input
             type="checkbox"
@@ -45,7 +46,8 @@ export default defineComponent({
   data() {
     return {
       todos: [] as Todo[],
-      todoText: ''
+      todoText: '',
+      searchQuery: ''
     };
   },
   methods: {
@@ -70,6 +72,12 @@ export default defineComponent({
       handler(newTodos: Todo[]) {
         localStorage.setItem('todos', JSON.stringify(newTodos));
       }
+    }
+  },
+  computed: {
+    filteredTodos(): Todo[] {
+    // console.log('Filtering todos...', this.searchQuery);
+      return this.todos.filter(todo => todo.text.includes(this.searchQuery));
     }
   },
   mounted() {
