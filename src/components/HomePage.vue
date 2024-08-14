@@ -42,7 +42,7 @@ interface Todo {
 }
 
 export default defineComponent({
-  name: 'HelloWorld',
+  name: 'HomePage',
   data() {
     return {
       todos: [] as Todo[],
